@@ -1,6 +1,8 @@
 package system
 
-import "runtime"
+import (
+	"runtime"
+)
 
 type Type int
 

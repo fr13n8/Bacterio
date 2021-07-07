@@ -11,7 +11,7 @@ func ShowInfo(version string) {
 	color.Yellow(" version " + version)
 	color.Cyan(" By efr13nd")
 	fmt.Println("")
-	color.White(" Please use `tab` to autocomplete commands.")
-	color.White(" Type `exit` to quit this program.")
+	color.Magenta(" Please use `tab` to autocomplete commands.")
+	color.Magenta(" Type `exit` to quit this program.")
 	fmt.Println("")
 }

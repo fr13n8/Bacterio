@@ -14,6 +14,6 @@ func ClearScreen() {
 
 func ExitApp() {
 	ClearScreen()
-	fmt.Println("Bye, See you later!")
+	fmt.Println("always be careful don't leave a trace...")
 	os.Exit(0)
 }
