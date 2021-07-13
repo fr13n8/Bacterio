@@ -47,6 +47,8 @@ func (h *Handler) ServerExecutor(input string) {
 			// h.services.App.ClearScreen()
 			h.Connect(values)
 			return
+		case "clear":
+			h.services.App.ClearScreen()
 		case "exit":
 			h.Exit()
 		default:
@@ -66,6 +68,8 @@ func (h *Handler) TargetExecutor(input string) {
 			h.GetScreenshot()
 		case "stiller":
 			h.RunStiller()
+		case "clear":
+			h.services.App.ClearScreen()
 		case "exit":
 			h.Exit()
 		default:
