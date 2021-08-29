@@ -17,6 +17,6 @@ func (c *AppService) ExitApp() {
 	system.ExitApp()
 }
 
-func (c *AppService) Build([]string) (string, error) {
+func (c *AppService) Build(map[string]string) (string, error) {
 	return "xuy", nil
 }

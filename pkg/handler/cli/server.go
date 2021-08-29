@@ -4,26 +4,23 @@ import (
 	"fmt"
 
 	"github.com/c-bata/go-prompt"
-	"github.com/fatih/color"
 	"github.com/fr13n8/Bacterio/internal/ui"
-	"github.com/fr13n8/Bacterio/internal/utils"
 	"github.com/fr13n8/Bacterio/pkg/network"
+	"github.com/fr13n8/Bacterio/pkg/utils"
 )
 
 func (h *Handler) Listen(v []string) {
-	if !utils.Contains(v, "host=") {
-		color.Yellow(" [!] You should set a host!")
-		return
+	params := map[string]string{
+		"host": "",
+		"prot": "",
 	}
-	if !utils.Contains(v, "port=") {
-		color.Yellow(" [!] You should set a port!")
+	vals, err := utils.Validate(v, params)
+	if err != nil {
+		fmt.Println(err.Error())
 		return
 	}
 
-	address := utils.SplitAfterIndex(utils.Find(v, "host="), '=')
-	port := utils.SplitAfterIndex(utils.Find(v, "port="), '=')
-
-	h.services.Server.CreateServer(address, port).HandleConnects()
+	h.services.Server.CreateServer(vals["host"], vals["port"]).HandleConnects()
 
 	p := prompt.New(
 		h.ServerExecutor,

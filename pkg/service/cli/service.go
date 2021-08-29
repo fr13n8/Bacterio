@@ -5,7 +5,7 @@ import "github.com/fr13n8/Bacterio/internal/models"
 type App interface {
 	ClearScreen()
 	ExitApp()
-	Build([]string) (string, error)
+	Build(map[string]string) (string, error)
 }
 
 type Server interface {

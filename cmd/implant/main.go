@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	ServerAddress = "192.168.100.3"
+	ServerAddress = "localhost"
 	ServerPort    = "4444"
 )
 
